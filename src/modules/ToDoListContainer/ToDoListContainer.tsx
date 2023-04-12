@@ -1,5 +1,5 @@
 import React from "react";
-import TodoItem from "../TodoItem/TodoItem";
+import ToDoItem from "../ToDoItem/ToDoItem";
 
 type ToDoListContainerProps = {
   todos: { id: number; task: string; complete: boolean }[];
@@ -17,7 +17,7 @@ const ToDoListContainer = ({
   return (
     <div>
       {todos.map((todo) => (
-        <TodoItem
+        <ToDoItem
           key={todo.id}
           todo={todo}
           handleDelete={handleDelete}

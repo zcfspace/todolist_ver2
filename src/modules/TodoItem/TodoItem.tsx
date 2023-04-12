@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Todo } from "./ToDoItem.type";
 import {
   SButton,
   SAddButton,
@@ -8,13 +9,13 @@ import {
 } from "../../components/Button/SButton";
 
 type TodoItemProps = {
-  todo: { id: number; task: string; complete: boolean };
+  todo: Todo;
   handleDelete: (id: number) => void;
   handleEdit: (id: number, newTask: string) => void;
   handleComplete: (id: number) => void;
 };
 
-const TodoItem = ({
+const ToDoItem = ({
   todo,
   handleDelete,
   handleEdit,
@@ -74,4 +75,4 @@ const STaskForm = styled.form``;
 const SInput = styled.input``;
 const SButtonDiv = styled.div``;
 
-export default TodoItem;
+export default ToDoItem;
