@@ -6,10 +6,10 @@ type TaskCreateProps = {
   handleAdd: (task: string) => void;
 };
 
-const TaskCreate = ({ handleAdd }: TaskCreateProps) => {
+const TaskCreate: React.FC<TaskCreateProps> = ({ handleAdd }) => {
   const [task, setTask] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     handleAdd(task);
     setTask("");

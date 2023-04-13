@@ -1,19 +1,20 @@
 import React from "react";
 import ToDoItem from "../ToDoItem/ToDoItem";
+import { Todo } from "../ToDoItem/ToDoItem.type";
 
 type ToDoListContainerProps = {
-  todos: { id: number; task: string; complete: boolean }[];
+  todos: Todo[];
   handleDelete: (id: number) => void;
   handleEdit: (id: number, newTask: string) => void;
   handleComplete: (id: number) => void;
 };
 
-const ToDoListContainer = ({
+const ToDoListContainer: React.FC<ToDoListContainerProps> = ({
   todos,
   handleDelete,
   handleEdit,
   handleComplete,
-}: ToDoListContainerProps) => {
+}) => {
   return (
     <div>
       {todos.map((todo) => (

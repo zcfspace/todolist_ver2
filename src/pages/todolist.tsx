@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import TaskCreate from "../modules/TaskCreate/TaskCreate";
 import ToDoListContainer from "../modules/ToDoListContainer/ToDoListContainer";
 import styled from "styled-components";
-import { Todo } from "./todo.type";
+import { Todo } from "../modules/ToDoItem/ToDoItem.type";
+
 import {
   getTasks,
   insertTask,
@@ -11,10 +12,9 @@ import {
   completeTask,
 } from "../services/ToDoView/ToDoView";
 
-
 function ToDoView() {
   const [todos, setTodos] = useState<Todo[]>([]);
-  
+
   useEffect(() => {
     getTasks().then((tasks) => {
       setTodos(tasks);
@@ -63,7 +63,7 @@ function ToDoView() {
         </SSearchDiv>
         <ToDoListContainer
           todos={todos}
-          handleDelete={handleDelete} 
+          handleDelete={handleDelete}
           handleEdit={handleEdit}
           handleComplete={handleComplete}
         />

@@ -15,16 +15,16 @@ type TodoItemProps = {
   handleComplete: (id: number) => void;
 };
 
-const ToDoItem = ({
+const ToDoItem: React.FC<TodoItemProps> = ({
   todo,
   handleDelete,
   handleEdit,
   handleComplete,
-}: TodoItemProps) => {
+}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newTask, setNewTask] = useState(todo.task);
 
-  const handleUpdate = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleUpdate: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     handleEdit(todo.id, newTask);
     setIsEditing(false);
